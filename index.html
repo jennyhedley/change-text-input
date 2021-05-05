@@ -14,8 +14,8 @@
         padding: 3px 0;
       }
       div > div {
-        color: green;
-        padding: 3px 0;
+        color: black;
+        padding: 0px 0;
       }
     </style>
   </head>
@@ -48,19 +48,55 @@
 "ask izzy",
 "ask izzy app",
 "australian family law issues in the news",
-"australian law reform commission family law inquiry"
+"australian law reform commission family law inquiry",
+        "barrister vs lawyer australia",
+"barrister vs solicitor",
+"benefits of group therapy domestic violence",
+"berry street victoria",
+"berry street victoria wait times",
+"bpd and psychosis",
+"bpd and psychosis symptoms",
+"breastfeeding and childcare",
+"breastfeeding how long",
+"breastfeeding how long is normal",
+        "can a drug addict get child custody",
+"can bpd be dangerous",
+"can i demand supervised visitations",
+"can i seek to vary my family court order",
+"can i withhold my child from his father",
+"can you be deported if your child is a citizen australia",
+"can you request a drug test for custody",
+"childcare how expensive",
+"childcare how to apply",
+"childcare near me",
+"childrens contact services victoria",
+"child witness domestic violence",
+"church for young families near me",
+"church near me",
+"connections unitingcare services",
+"contusion to head child medical advice",
+"cost of po box",
+"covert listening device legal",
+"crocodile tears",
+"crocodile tears origin",
+"cycle of abuse",
+"cycle of abuse honeymoon phase",
+"cycle of abuse wheel printable"
+
+
 
       ];
 
       function changeText(e) {
+        const searchWord = e.target.value.toLowerCase().trim();
         const resultWords = words.filter(word =>
-          word.toLowerCase().startsWith(e.target.value.toLowerCase().trim())
+          word.toLowerCase().startsWith(searchWord)
         );
         // clear exist words
         while (textWrapper.firstChild) {
           textWrapper.removeChild(textWrapper.firstChild);
         }
-        if (e.target.value != "") {
+        if (searchWord != "") {
           for (var i = 0; i < resultWords.length; i++) {
             const line = document.createElement("div");
             line.innerHTML = resultWords[i];
