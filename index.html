@@ -27,11 +27,34 @@
     <script>
       const textWrapper = document.getElementById("text-wrapper");
       const textInput = document.getElementById("text-input");
-      const words = ["a place", "aardvark", "bees", "programs"];
+      const words = [
+        
+        "aboriginal deaths in custody",
+"aboriginal deaths in custody royal commission",
+"absent father during pregnancy",
+"abuse during pregnancy effect on baby",
+"abusive relationship cycle",
+"age child can refuse visitation",
+"airport watch list removal",
+"airport watch list rules",
+"am i in an abusive relationship",
+"am i in an abusive relationship test",
+"anxiety during pregnancy",
+"anxiety during pregnancy third trimester",
+"app domestic violence",
+"applying for full custody of a child",
+"appropriate dress for court",
+"art of war free download",
+"ask izzy",
+"ask izzy app",
+"australian family law issues in the news",
+"australian law reform commission family law inquiry"
+
+      ];
 
       function changeText(e) {
         const resultWords = words.filter(word =>
-          word.toLowerCase().startsWith(e.target.value.toLowerCase())
+          word.toLowerCase().startsWith(e.target.value.toLowerCase().trim())
         );
         // clear exist words
         while (textWrapper.firstChild) {
