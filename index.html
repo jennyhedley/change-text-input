@@ -27,7 +27,7 @@
     <script>
       const textWrapper = document.getElementById("text-wrapper");
       const textInput = document.getElementById("text-input");
-      const words = "a place,a platter,between,b place,c place".split(",");
+      const words = ["a place", "aardvark", "bees", "programs"];
 
       function changeText(e) {
         const resultWords = words.filter(word =>
@@ -37,10 +37,18 @@
         while (textWrapper.firstChild) {
           textWrapper.removeChild(textWrapper.firstChild);
         }
-        for (var i = 0; i < resultWords.length; i++) {
-          const line = document.createElement("div");
-          line.innerHTML = resultWords[i];
-          textWrapper.appendChild(line);
+        if (e.target.value != "") {
+          for (var i = 0; i < resultWords.length; i++) {
+            const line = document.createElement("div");
+            line.innerHTML = resultWords[i];
+            textWrapper.appendChild(line);
+          }
+
+          if (resultWords.length === 0) {
+            const line = document.createElement("div");
+            line.innerHTML = "no results";
+            textWrapper.appendChild(line);
+          }
         }
       }
 
